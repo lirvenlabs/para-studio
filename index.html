@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PARA STUDIO | Architecture Numérique pour le Paramédical</title>
+    <meta name="description" content="Spécialiste en architecture numérique pour le secteur paramédical. Création de sites internet premium, ergonomiques et conformes pour les professionnels de la santé.">
+    <meta name="keywords" content="création site web, paramédical, professionnel de santé, site internet médical, webdesign, kinésithérapeute, ostéopathe, Para Studio">
+    <meta name="author" content="Para Studio">
+    <meta name="robots" content="index, follow"> <link rel="canonical" href="https://www.parastudio.fr"> <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.parastudio.fr">
+    <meta property="og:title" content="PARA STUDIO | Architecture Numérique Paramédicale">
+    <meta property="og:description" content="Des sites internet premium, performants et conformes pour les professionnels de la santé.">
+    <meta property="og:image" content="https://www.parastudio.fr/acceuil.jpg"> <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.parastudio.fr">
+    <meta name="twitter:title" content="PARA STUDIO | Sites web pour le paramédical">
+    <meta name="twitter:description" content="Des sites internet premium pour les professionnels de la santé.">
+    <meta name="twitter:image" content="https://www.parastudio.fr/acceuil.jpg">
+
+    <link rel="icon" type="image/png" href="favicon.png"> <link rel="icon" type="image/svg+xml" href="favicon.svg"> <link rel="apple-touch-icon" href="favicon.png"> <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        stoneBg: '#F9F8F6',
+                        stoneCard: '#F0EFEA',
+                        charcoal: '#2A2F2C',
+                        rust: '#B55A42',
+                        rustHover: '#984934',
+                        sage: '#7C8A7D'
+                    },
+                    fontFamily: {
+                        sans: ['"DM Sans"', 'sans-serif'],
+                        serif: ['"DM Serif Display"', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+    <style>
+        /* Smooth Scroll Lenis (simulation CSS fallback) */
+        html { scroll-behavior: smooth; }
+        body { background-color: #F9F8F6; color: #2A2F2C; overflow-x: hidden; }
+        
+        /* Animations d'apparition douces et naturelles */
+        .reveal { 
+            opacity: 0; 
+            transform: translateY(25px); 
+            transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), transform 1s cubic-bezier(0.25, 1, 0.5, 1); 
+            will-change: opacity, transform;
+        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 150ms; }
+        .delay-200 { transition-delay: 300ms; }
+        .delay-300 { transition-delay: 450ms; }
+
+        /* Composants Éditoriaux */
+        .btn-primary {
+            background-color: #B55A42;
+            color: #F9F8F6;
+            font-weight: 500;
+            border-radius: 9999px;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-primary:hover {
+            background-color: #984934;
+            transform: translateY(-2px);
+        }
+
+        .btn-outline {
+            border: 1px solid #2A2F2C;
+            color: #2A2F2C;
+            font-weight: 500;
+            border-radius: 9999px;
+            padding: 1rem 2rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-outline:hover {
+            background-color: #2A2F2C;
+            color: #F9F8F6;
+        }
+
+        /* Formulaires Premium */
+        .editorial-input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #D1CDC7;
+            padding: 0.75rem 0;
+            color: #2A2F2C;
+            font-family: "DM Sans", sans-serif;
+            font-size: 1.05rem;
+            border-radius: 0;
+            transition: border-color 0.3s ease;
+        }
+        .editorial-input:focus {
+            outline: none;
+            border-bottom-color: #B55A42;
+        }
+        .editorial-input::placeholder { color: #A39E98; }
+
+        /* Image Premium - Scale effect au survol */
+        .img-editorial {
+            transition: transform 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .group:hover .img-editorial {
+            transform: scale(1.03);
+        }
+        
+        /* Nettoyage Accordéon */
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    </style>
+</head>
+<body class="antialiased selection:bg-rust selection:text-white">
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-stoneBg/0 py-6">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center">
+            <div class="font-serif text-2xl tracking-wide text-charcoal">
+                Para<span class="italic text-rust">Studio</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-[15px] font-medium text-charcoal/80">
+                <a href="#expertises" class="hover:text-rust transition-colors">Expertises</a>
+                <a href="#tarifs" class="hover:text-rust transition-colors">Tarifs</a>
+                <a href="#avis" class="hover:text-rust transition-colors">Avis clients</a>
+                <a href="#faq" class="hover:text-rust transition-colors">FAQ</a>
+            </div>
+            <a href="#contact" class="hidden sm:inline-flex border-b border-charcoal pb-1 text-sm font-medium hover:text-rust hover:border-rust transition-colors">
+                Initier un projet
+            </a>
+            <a href="TON_LIEN_CALENDLY" target="_blank" class="btn-primary ml-6">
+                Appel découverte
+            </a>
+        </div>
+    </nav>
+
+    <section class="pt-40 pb-20 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row gap-16 items-center min-h-[90vh]">
+        <div class="lg:w-1/2 reveal">
+            <div class="inline-flex items-center gap-3 mb-8">
+                <span class="w-8 h-px bg-rust"></span>
+                <span class="text-rust font-medium text-sm tracking-widest uppercase">Paramédical & Bien-Être</span>
+            </div>
+            <h1 class="font-serif text-5xl lg:text-7xl text-charcoal leading-[1.1] mb-8">
+                L'infrastructure web <br>
+                <span class="italic text-sage">à votre image.</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-charcoal/70 leading-relaxed mb-10 max-w-md font-light">
+                Nous concevons des espaces numériques authentiques, sécurisés et performants. Une extension naturelle de votre cabinet pour rassurer vos patients.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#contact" class="btn-primary">
+                    Parlez-nous de votre cabinet
+                </a>
+                <a href="#expertises" class="btn-outline">
+                    Découvrir nos services
+                </a>
+            </div>
+        </div>
+        
+        <div class="lg:w-1/2 w-full reveal delay-100 rounded-2xl overflow-hidden h-[600px] relative shadow-2xl shadow-stone-300/50 group">
+            <img src="acceuil.jpg" alt="Séance d'ostéopathie douce" class="img-editorial w-full h-full object-cover">
+            <div class="absolute inset-0 bg-charcoal/10"></div>
+        </div>
+    </section>
+
+    <section id="binome" class="py-24 bg-stoneCard border-y border-charcoal/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-20 reveal text-center max-w-3xl mx-auto">
+                <h2 class="font-serif text-4xl lg:text-5xl text-charcoal mb-6">L'alliance du soin et du code.</h2>
+                <p class="text-lg text-charcoal/70 leading-relaxed">
+                    Para Studio n'est pas une agence classique. C'est la rencontre entre les exigences cliniques et l'artisanat numérique. Nous avons uni nos deux mondes pour vous offrir des outils qui comprennent vraiment votre quotidien.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
+                <div class="reveal delay-100 group">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 relative">
+                        <img src="matheo.jpg" alt="Mathéo DUCHEMIN - Ergothérapeute" class="img-editorial w-full h-full object-cover filter grayscale-[20%] sepia-[10%]">
+                        <div class="absolute bottom-4 left-4 bg-stoneBg/90 backdrop-blur px-5 py-3 rounded-xl border border-charcoal/5 shadow-lg">
+                            <span class="block font-serif text-2xl text-charcoal">Mathéo DUCHEMIN</span>
+                            <span class="text-xs font-bold text-rust uppercase tracking-wider mt-1 block">Ergothérapeute D.E.</span>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-2xl text-charcoal mb-4">Le garant du parcours patient.</h3>
+                    <p class="text-charcoal/70 leading-relaxed">
+                        En tant que praticien, je veille à ce que chaque interface respecte la déontologie de votre Ordre. Je traduis vos besoins cliniques en expériences numériques douces, accessibles et rassurantes pour les patients.
+                    </p>
+                </div>
+
+                <div class="reveal delay-200 group">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden mb-8 relative">
+                        <img src="lilian.jpg" alt="Lilian RIVIERE - Développeur" class="img-editorial w-full h-full object-cover filter grayscale-[20%] sepia-[10%]">
+                        <div class="absolute bottom-4 left-4 bg-stoneBg/90 backdrop-blur px-5 py-3 rounded-xl border border-charcoal/5 shadow-lg">
+                            <span class="block font-serif text-2xl text-charcoal">Lilian RIVIERE</span>
+                            <span class="text-xs font-bold text-sage uppercase tracking-wider mt-1 block">Développeur & Architecte</span>
+                        </div>
+                    </div>
+                    <h3 class="font-serif text-2xl text-charcoal mb-4">Le garant de la performance.</h3>
+                    <p class="text-charcoal/70 leading-relaxed">
+                        Je construis des fondations solides et sur-mesure. Pas de solutions préfabriquées ni de lenteurs. Je m'assure que vos outils sont sécurisés (HDS), rapides, et vous appartiennent totalement.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="expertises" class="py-24 max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal border-b border-charcoal/10 pb-8">
+            <div class="max-w-2xl">
+                <span class="text-sage font-medium text-sm tracking-widest uppercase mb-4 block">Nos Services</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-charcoal">Un accompagnement sur-mesure.</h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-x-12 gap-y-16">
+            <div class="reveal delay-100 flex flex-col">
+                <div class="w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center mb-6 text-rust">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="font-serif text-2xl text-charcoal mb-4">Identité & Vitrine</h3>
+                <p class="text-charcoal/70 leading-relaxed flex-grow">
+                    Nous créons l'univers visuel de votre cabinet. Un design épuré, des couleurs apaisantes et une typographie lisible pour rassurer vos patients.
+                </p>
+            </div>
+
+            <div class="reveal delay-200 flex flex-col">
+                <div class="w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center mb-6 text-rust">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                </div>
+                <h3 class="font-serif text-2xl text-charcoal mb-4">Prise de RDV</h3>
+                <p class="text-charcoal/70 leading-relaxed flex-grow">
+                    Intégration fluide de vos outils (Doctolib, Perfactive, Rosa...). Vos patients prennent rendez-vous directement depuis votre site sans friction.
+                </p>
+            </div>
+
+            <div class="reveal delay-300 flex flex-col">
+                <div class="w-12 h-12 rounded-full border border-charcoal/20 flex items-center justify-center mb-6 text-rust">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path></svg>
+                </div>
+                <h3 class="font-serif text-2xl text-charcoal mb-4">Sécurité (HDS)</h3>
+                <p class="text-charcoal/70 leading-relaxed flex-grow">
+                    Nous garantissons une infrastructure technologique conforme à la législation santé et au RGPD. La confidentialité au cœur du code.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tarifs" class="py-24 bg-stoneBg border-y border-charcoal/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-16 reveal text-center max-w-3xl mx-auto">
+                <span class="text-rust font-medium text-sm tracking-widest uppercase mb-4 block">Investissement</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-charcoal mb-6">Des offres claires, sans surprise.</h2>
+                <p class="text-lg text-charcoal/70 leading-relaxed">
+                    Nous concevons des sites professionnels sur-mesure qui vous appartiennent à 100%. Un investissement unique pour la pérennité de votre cabinet.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                
+                <div class="bg-stoneCard p-10 rounded-2xl reveal delay-100 flex flex-col shadow-sm border border-charcoal/10 relative">
+                    <h3 class="font-serif text-2xl text-charcoal mb-2">Présence</h3>
+                    <p class="text-charcoal/60 mb-6 min-h-[3rem]">Idéal pour les praticiens s'installant et nécessitant une belle vitrine rassurante.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-serif text-charcoal">1 490 €</span>
+                        <span class="text-charcoal/60 text-sm">/ paiement unique</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow text-charcoal/80">
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Design sur-mesure (jusqu'à 3 pages)</li>
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Intégration de votre agenda (Doctolib, etc.)</li>
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Formulaire de contact sécurisé</li>
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Hébergement écologique & rapide</li>
+                    </ul>
+                    <a href="#contact" class="btn-outline w-full">Demander un devis</a>
+                </div>
+
+                <div class="bg-charcoal p-10 rounded-2xl reveal delay-200 flex flex-col shadow-xl border border-charcoal relative">
+                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-rust text-white text-xs font-bold uppercase tracking-wider py-1.5 px-4 rounded-full">
+                        Le plus choisi
+                    </div>
+                    <h3 class="font-serif text-2xl text-stoneBg mb-2">Cabinet Complet</h3>
+                    <p class="text-stoneBg/60 mb-6 min-h-[3rem]">Pour les cabinets pluridisciplinaires ou les praticiens voulant développer leur patientèle.</p>
+                    <div class="mb-8">
+                        <span class="text-4xl font-serif text-stoneBg">2 490 €</span>
+                        <span class="text-stoneBg/60 text-sm">/ paiement unique</span>
+                    </div>
+                    <ul class="space-y-4 mb-10 flex-grow text-stoneBg/80">
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Site complet (jusqu'à 8 pages)</li>
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Optimisation SEO poussée (référencement local)</li>
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Pages dédiées aux différentes thérapies/praticiens</li>
+                        <li class="flex items-start gap-3"><span class="text-rust mt-1">✦</span> Photothèque & rédaction web assistée</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary w-full" style="background-color: #B55A42; color: #F9F8F6; border-color: #B55A42;">Démarrer ce projet</a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 text-charcoal/60 text-sm reveal delay-300">
+                <p>Besoin d'une plateforme métier spécifique ou d'une maison de santé de grande ampleur ? <a href="#contact" class="text-rust underline underline-offset-4">Contactez-nous pour du sur-mesure</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="avis" class="py-24 bg-stoneBg border-t border-charcoal/5">
+        <div class="max-w-7xl mx-auto px-6 lg:px-12">
+            <div class="mb-16 reveal text-center max-w-3xl mx-auto">
+                <span class="text-sage font-medium text-sm tracking-widest uppercase mb-4 block">Paroles de praticiens</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-charcoal mb-6">Ce qu'ils en pensent.</h2>
+                <p class="text-lg text-charcoal/70 leading-relaxed">
+                    Découvrez les retours des confrères et consœurs paramédicaux que nous avons accompagnés.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-stoneCard p-8 rounded-2xl reveal delay-100 flex flex-col shadow-sm border border-charcoal/5">
+                    <div class="flex text-rust mb-6 gap-1">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-charcoal/80 mb-8 flex-grow">"J'avais un site complètement obsolète qui ne reflétait pas du tout mon cabinet. L'équipe a tout repris de zéro. C'est propre, hyper moderne, et surtout, ils ont géré la connexion avec Doctolib direct dessus sans que j'aie à m'en soucier. Très satisfait du résultat."</p>
+                    <div class="flex items-center gap-4 border-t border-charcoal/10 pt-4 mt-auto">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&auto=format&fit=crop" alt="Camille D." class="w-12 h-12 rounded-full object-cover border-2 border-stoneBg shadow-sm">
+                        <div>
+                            <h4 class="font-serif text-lg text-charcoal leading-none">Camille D.</h4>
+                            <span class="text-xs text-sage uppercase tracking-wider font-bold">Masseur-Kinésithérapeute</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stoneCard p-8 rounded-2xl reveal delay-200 flex flex-col shadow-sm border border-charcoal/5">
+                    <div class="flex text-rust mb-6 gap-1">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-charcoal/80 mb-8 flex-grow">"Franchement, top. Je n'y connais rien du tout en création de site et ils ont été super patients. Le site est très beau, les couleurs sont douces comme je le voulais pour la vitrine de mon cabinet. J'ai eu de bons retours de mes nouveaux patients d'ailleurs !"</p>
+                    <div class="flex items-center gap-4 border-t border-charcoal/10 pt-4 mt-auto">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=150&auto=format&fit=crop" alt="Julien T." class="w-12 h-12 rounded-full object-cover border-2 border-stoneBg shadow-sm">
+                        <div>
+                            <h4 class="font-serif text-lg text-charcoal leading-none">Julien T.</h4>
+                            <span class="text-xs text-sage uppercase tracking-wider font-bold">Ostéopathe D.O.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-stoneCard p-8 rounded-2xl reveal delay-300 flex flex-col shadow-sm border border-charcoal/5">
+                    <div class="flex text-rust mb-6 gap-1">
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                        <svg class="w-5 h-5 fill-current" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                    </div>
+                    <p class="text-charcoal/80 mb-8 flex-grow">"Super contact avec l'équipe de Para Studio. Ils ont vite compris ce que je cherchais : un site simple, clair, où les parents peuvent trouver les infos facilement avant le premier bilan de leur enfant. Délais respectés, je recommande les yeux fermés !"</p>
+                    <div class="flex items-center gap-4 border-t border-charcoal/10 pt-4 mt-auto">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=150&auto=format&fit=crop" alt="Marie L." class="w-12 h-12 rounded-full object-cover border-2 border-stoneBg shadow-sm">
+                        <div>
+                            <h4 class="font-serif text-lg text-charcoal leading-none">Marie L.</h4>
+                            <span class="text-xs text-sage uppercase tracking-wider font-bold">Orthophoniste</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-24 bg-stoneCard">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <div class="mb-16 reveal text-center">
+                <span class="text-sage font-medium text-sm tracking-widest uppercase mb-4 block">Foire aux questions</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-charcoal">Toutes vos réponses.</h2>
+            </div>
+            
+            <div class="space-y-4 reveal delay-100">
+                <details class="group bg-stoneBg rounded-xl border border-charcoal/5 overflow-hidden">
+                    <summary class="flex justify-between items-center font-serif text-xl text-charcoal p-6 cursor-pointer list-none">
+                        <span>Combien de temps faut-il pour créer le site de mon cabinet ?</span>
+                        <span class="transition group-open:rotate-45 text-rust text-3xl font-light">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4">
+                        En général, la conception d'un site sur-mesure prend entre 3 à 5 semaines. Cela inclut la phase de découverte pour bien comprendre votre pratique, la création de la maquette visuelle, le développement technique et l'intégration de vos différents outils (prise de rendez-vous, accès patient, etc.).
+                    </div>
+                </details>
+
+                <details class="group bg-stoneBg rounded-xl border border-charcoal/5 overflow-hidden">
+                    <summary class="flex justify-between items-center font-serif text-xl text-charcoal p-6 cursor-pointer list-none">
+                        <span>Mon site sera-t-il conforme à la législation sur la santé ?</span>
+                        <span class="transition group-open:rotate-45 text-rust text-3xl font-light">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4">
+                        Absolument. En tant que professionnels familiers du milieu paramédical, nous connaissons vos contraintes légales et déontologiques. Nous travaillons avec des hébergeurs certifiés HDS (Hébergeur de Données de Santé) et nous assurons que toutes les normes de confidentialité et le RGPD soient strictement respectés.
+                    </div>
+                </details>
+
+                <details class="group bg-stoneBg rounded-xl border border-charcoal/5 overflow-hidden">
+                    <summary class="flex justify-between items-center font-serif text-xl text-charcoal p-6 cursor-pointer list-none">
+                        <span>Pouvez-vous intégrer Doctolib ou d'autres agendas en ligne ?</span>
+                        <span class="transition group-open:rotate-45 text-rust text-3xl font-light">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4">
+                        Oui ! Nous pouvons intégrer de manière fluide Doctolib, Maiia, Perfactive, Rosa, ou n'importe quel autre outil de prise de rendez-vous que vous utilisez déjà. L'intégration est pensée pour qu'il n'y ait aucune friction pour le patient.
+                    </div>
+                </details>
+
+                <details class="group bg-stoneBg rounded-xl border border-charcoal/5 overflow-hidden">
+                    <summary class="flex justify-between items-center font-serif text-xl text-charcoal p-6 cursor-pointer list-none">
+                        <span>Dois-je rédiger moi-même les textes de présentation ?</span>
+                        <span class="transition group-open:rotate-45 text-rust text-3xl font-light">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4">
+                        C'est vous qui décidez. Nous proposons un accompagnement éditorial personnalisé. Si vous le souhaitez, nous pouvons relire, structurer ou entièrement rédiger vos contenus pour qu'ils soient à la fois professionnels, rassurants pour vos patients et optimisés pour le référencement local (SEO) sur Google.
+                    </div>
+                </details>
+
+                <details class="group bg-stoneBg rounded-xl border border-charcoal/5 overflow-hidden">
+                    <summary class="flex justify-between items-center font-serif text-xl text-charcoal p-6 cursor-pointer list-none">
+                        <span>À qui appartiendra le site une fois terminé ?</span>
+                        <span class="transition group-open:rotate-45 text-rust text-3xl font-light">+</span>
+                    </summary>
+                    <div class="px-6 pb-6 text-charcoal/70 leading-relaxed border-t border-charcoal/5 pt-4">
+                        À vous, à 100%. Contrairement à certaines plateformes de création de site qui vous lient avec des abonnements obligatoires, nous vous remettons la pleine propriété intellectuelle et technique de votre plateforme web. Vous en êtes le seul et unique propriétaire.
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-stoneBg border-t border-charcoal/10">
+        <div class="max-w-4xl mx-auto px-6 lg:px-12">
+            <div class="mb-12 reveal text-center">
+                <span class="text-sage font-medium text-sm tracking-widest uppercase mb-4 block">Initier un projet</span>
+                <h2 class="font-serif text-4xl lg:text-5xl text-charcoal">Faisons connaissance.</h2>
+            </div>
+            
+            <form class="elegant-form flex flex-col gap-8 w-full max-w-lg mx-auto">
+    <div class="flex flex-col relative">
+        <label for="name" class="text-xs font-bold text-charcoal/60 mb-2 tracking-widest uppercase">Nom complet</label>
+        <input type="text" id="name" name="nom" required 
+               class="w-full bg-transparent border-b border-charcoal/20 py-2 text-charcoal focus:outline-none focus:border-rust transition-colors" 
+               placeholder="Dr. Jean Dupont">
+    </div>
+
+    <div class="flex flex-col relative">
+        <label for="email" class="text-xs font-bold text-charcoal/60 mb-2 tracking-widest uppercase">Adresse email</label>
+        <input type="email" id="email" name="email" required 
+               class="w-full bg-transparent border-b border-charcoal/20 py-2 text-charcoal focus:outline-none focus:border-rust transition-colors" 
+               placeholder="contact@cabinet.fr">
+    </div>
+
+    <div class="flex flex-col relative">
+        <label for="message" class="text-xs font-bold text-charcoal/60 mb-2 tracking-widest uppercase">Votre projet</label>
+        <textarea id="message" name="message" rows="4" required 
+                  class="w-full bg-transparent border-b border-charcoal/20 py-2 text-charcoal focus:outline-none focus:border-rust transition-colors resize-none" 
+                  placeholder="Parlez-nous de vos besoins..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-btn mt-6 w-full bg-charcoal text-white py-4 font-medium hover:bg-rust transition-all flex justify-center items-center">
+        <span class="btn-text">Transmettre le dossier</span>
+    </button>
+</form>
+        </div>
+    </section>
+
+<footer class="bg-[#2A2F2C] py-16 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <div class="font-serif text-2xl mb-8 text-white">Para<span class="italic text-rust">Studio</span></div>
+        
+        <div class="flex flex-wrap justify-center items-center gap-x-6 gap-y-2 text-sm font-medium text-white/70">
+            <a href="mentions-legales.html" class="hover:text-rust transition-colors">Mentions Légales</a>
+            <span class="hidden md:block w-1.5 h-1.5 bg-rust/40 rounded-full"></span>
+            <a href="politique-confidentialite.html" class="hover:text-rust transition-colors">Confidentialité</a>
+            <span class="hidden md:block w-1.5 h-1.5 bg-rust/40 rounded-full"></span>
+            <a href="cgv.html" class="hover:text-rust transition-colors">CGV / CGU</a>
+        </div>
+        
+        <p class="mt-10 text-[10px] text-white/30 tracking-[0.2em] uppercase">© 2026 PARA STUDIO — Architecture Numérique</p>
+    </div>
+</footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Header fluide au scroll
+            const header = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.replace('bg-stoneBg/0', 'bg-stoneBg/95');
+                    header.classList.add('backdrop-blur-sm', 'border-b', 'border-charcoal/10');
+                    header.classList.replace('py-6', 'py-4');
+                } else {
+                    header.classList.replace('bg-stoneBg/95', 'bg-stoneBg/0');
+                    header.classList.remove('backdrop-blur-sm', 'border-b', 'border-charcoal/10');
+                    header.classList.replace('py-4', 'py-6');
+                }
+            });
+
+            // Moteur d'animations au scroll
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50px 0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+
+            // Validation de formulaire ergonomique
+            const contactForm = document.querySelector('.elegant-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = this.querySelector('.submit-btn');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const formData = new FormData(contactForm);
+
+        submitBtn.style.width = submitBtn.offsetWidth + 'px';
+        btnText.style.opacity = '0';
+
+        setTimeout(() => {
+            btnText.textContent = "Envoi en cours...";
+            btnText.style.opacity = '1';
+        }, 300);
+
+        // ✅ Envoi réel vers Formspree
+        fetch("https://formspree.io/f/mwvaneky", {
+            method: "POST",
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        })
+        .then(response => {
+            if (response.ok) {
+                btnText.style.opacity = '0';
+                setTimeout(() => {
+                    btnText.textContent = "Dossier transmis ✓";
+                    submitBtn.style.backgroundColor = "#7C8A7D";
+                    btnText.style.opacity = '1';
+                }, 300);
+                setTimeout(() => {
+                    contactForm.reset();
+                    btnText.style.opacity = '0';
+                    setTimeout(() => {
+                        btnText.textContent = "Transmettre le dossier";
+                        submitBtn.style.backgroundColor = "";
+                        submitBtn.style.width = "auto";
+                        btnText.style.opacity = '1';
+                    }, 300);
+                }, 4000);
+            } else {
+                btnText.style.opacity = '0';
+                setTimeout(() => {
+                    btnText.textContent = "Erreur, réessayez";
+                    submitBtn.style.backgroundColor = "#B55A42";
+                    btnText.style.opacity = '1';
+                }, 300);
+            }
+        })
+        .catch(() => {
+            btnText.style.opacity = '0';
+            setTimeout(() => {
+                btnText.textContent = "Erreur de connexion";
+                submitBtn.style.backgroundColor = "#B55A42";
+                btnText.style.opacity = '1';
+            }, 300);
+        });
+    });
+}
+        });
+    </script>
+</body>
+</html>

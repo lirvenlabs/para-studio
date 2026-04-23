@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confidentialité | PARA STUDIO</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: { extend: { colors: { stoneBg: '#F9F8F6', charcoal: '#2A2F2C', rust: '#B55A42', sage: '#7C8A7D' }, fontFamily: { sans: ['"DM Sans"', 'sans-serif'], serif: ['"DM Serif Display"', 'serif'] } } }
+        }
+    </script>
+</head>
+<body class="bg-stoneBg text-charcoal antialiased">
+    <nav class="py-8 px-6 lg:px-12 flex justify-between items-center border-b border-charcoal/5">
+        <a href="index.html" class="font-serif text-2xl">Para<span class="italic text-rust">Studio</span></a>
+        <a href="index.html" class="text-sm font-semibold hover:text-rust transition-all">← RETOUR</a>
+    </nav>
+
+    <main class="max-w-3xl mx-auto py-24 px-6">
+        <h1 class="font-serif text-5xl lg:text-7xl mb-16">Données<br><span class="italic text-rust">Privées</span></h1>
+        
+        <div class="space-y-12 text-charcoal/70 text-lg">
+            <section>
+                <h2 class="font-serif text-2xl text-charcoal mb-4 border-b border-charcoal/10 pb-2">Collecte des informations</h2>
+                <p>Nous collectons uniquement les données transmises via notre formulaire de contact (Nom, Email, Message) afin de répondre à vos besoins d'architecture numérique.</p>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-charcoal mb-4 border-b border-charcoal/10 pb-2">Sécurité des données</h2>
+                <p>Spécialisé dans le secteur paramédical, nous accordons une importance capitale à la confidentialité. Vos données ne sont jamais cédées ou vendues à des tiers.</p>
+            </section>
+
+            <section>
+                <h2 class="font-serif text-2xl text-charcoal mb-4 border-b border-charcoal/10 pb-2">Vos droits (RGPD)</h2>
+                <p>Vous disposez d’un droit d’accès, de rectification et de suppression de vos données. Contactez-nous à : <strong>[VOTRE EMAIL]</strong>.</p>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
